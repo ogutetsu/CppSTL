@@ -19,6 +19,9 @@
     <Filter Include="ソース ファイル\Functional">
       <UniqueIdentifier>{b9c6c1f8-17a4-438d-9c20-b7e2bfa1cf85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Tuple">
+      <UniqueIdentifier>{a6b98001-4a03-41f6-904a-8ff4014ae7f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -29,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="Function.cpp">
       <Filter>ソース ファイル\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="Tuple.cpp">
+      <Filter>ソース ファイル\Tuple</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

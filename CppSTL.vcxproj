@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp" />
     <ClCompile Include="Function.cpp" />
+    <ClCompile Include="Tuple.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

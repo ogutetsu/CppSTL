@@ -6,7 +6,7 @@
 
 extern void UtilityMain();
 extern void FunctionMain();
-
+extern void TupleMain();
 
 
 int main()
@@ -23,6 +23,11 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+	std::cout << " ==== Tuple === " << std::endl;
+
+	TupleMain();
+
+	std::cout << " ================ " << std::endl;
 
 }
 
