@@ -20,6 +20,9 @@ T createT(Args&&... args)
 }
 
 
+extern void PairSample();
+
+
 void UtilityMain()
 {
 
@@ -61,7 +64,26 @@ void UtilityMain()
 	typedef std::vector<int> IntVec;
 	IntVec intVec = createT<IntVec>(std::initializer_list<int>{1, 2, 3});
 	
-		
+
+	PairSample();
+	
+}
+
+
+
+void PairSample()
+{
+
+	std::pair<const char*, double> CharDouble("str", 3.1415);
+	std::pair<const char*, double> CharDouble2 = std::make_pair("str", 3.1415);
+
+	auto CharDouble3 = std::make_pair("str", 3.1415);
+
+	cout << CharDouble.first << ", " << CharDouble.second << endl;
+	CharDouble.first = "Str";
+	std::get<1>(CharDouble) = 5.15;
+
+	cout << CharDouble.first << ", " << CharDouble.second << endl;
 	
 }
 
