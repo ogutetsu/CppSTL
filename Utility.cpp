@@ -1,9 +1,24 @@
 
 #include <iostream>
 #include <algorithm>
+#include <utility>
+#include <vector>
 
 using std::cout;
 using std::endl;
+
+
+struct ForwardData
+{
+	ForwardData(int, double, char) {};
+};
+
+template<typename T, typename... Args>
+T createT(Args&&... args)
+{
+	return T(std::forward<Args>(args)...);
+}
+
 
 void UtilityMain()
 {
@@ -26,6 +41,27 @@ void UtilityMain()
 	cout << pairSeq.first << " , " << pairSeq.second << endl;
 	cout << pairAbs.first << " , " << pairAbs.second << endl;
 
+
+	std::vector<int> SrcVec(10000, 1000);
+	std::vector<int> DstVec;
+
+	/*
+	 * コピーよりも移動させる方が安価
+	 * 不要なメモリの割り当てと割り当て解除は発生しない
+	 */
+	DstVec = std::move(SrcVec);
+
+
+	int at = createT<int>();
+	int bt = createT<int>(1);
+
+	std::string s = createT<std::string>("test.");
+	ForwardData data = createT<ForwardData>(1, 3.1415, 'a');
+
+	typedef std::vector<int> IntVec;
+	IntVec intVec = createT<IntVec>(std::initializer_list<int>{1, 2, 3});
+	
+		
 	
 }
 
