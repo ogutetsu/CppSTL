@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\Utility">
       <UniqueIdentifier>{84660086-8a13-45a3-932c-1e9b6a971bbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Functional">
+      <UniqueIdentifier>{b9c6c1f8-17a4-438d-9c20-b7e2bfa1cf85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="Utility.cpp">
       <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>ソース ファイル\Functional</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

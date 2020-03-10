@@ -5,6 +5,7 @@
 
 
 extern void UtilityMain();
+extern void FunctionMain();
 
 
 
@@ -16,8 +17,13 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+	std::cout << " ==== Function === " << std::endl;
 
-	
+	FunctionMain();
+
+	std::cout << " ================ " << std::endl;
+
+
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
