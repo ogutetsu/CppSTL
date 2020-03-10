@@ -7,6 +7,9 @@ using std::endl;
 using std::tuple;
 using std::get;
 
+
+extern void TieIgnoreSample();
+
 void TupleMain()
 {
 	tuple<std::string, int, float> tup1("first", 3, 4.5f);
@@ -22,6 +25,30 @@ void TupleMain()
 	cout << get<0>(tup2) << ", " << get<1>(tup2) << ", " << get<2>(tup2) << endl;
 
 
+	TieIgnoreSample();
+}
+
+
+void TieIgnoreSample()
+{
+	int first = 1;
+	int second = 2;
+	int third = 3;
+	int fourth = 4;
+
+	auto tup = std::tie(first, second, third, fourth) = std::make_tuple(11, 12, 13, 14);
+
+	cout << first << ", " << second << ", " << third << ", " << fourth << endl;
+
+	first = 111;
+	get<1>(tup) = 222;
+
+	cout << get<0>(tup) << ", " << get<1>(tup) << endl;
+
+	int a, b;
+	std::tie(std::ignore, a, std::ignore, b) = tup;
+	cout << a << ", " << b << endl;  // 222, 14
+	
 	
 }
 
