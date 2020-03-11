@@ -71,9 +71,28 @@ void UniqueSample()
 	std::unique_ptr<SampleInt2[]> uniqueArray(new SampleInt2[3]);
 }
 
+void SharedSample()
+{
+	auto sharePtr = std::make_shared<SampleInt>(10);
+	cout << sharePtr.use_count() << endl;		//1
+	{
+		std::shared_ptr<SampleInt> localPtr(sharePtr);
+		cout << sharePtr.use_count() << endl;		//2
+	}
+	cout << sharePtr.use_count() << endl;		//1
+
+	std::shared_ptr<SampleInt> globPtr = sharePtr;
+	cout << sharePtr.use_count() << endl;		//2
+	
+	globPtr.reset();
+	cout << sharePtr.use_count() << endl;		//1
+}
+
 void SmartPtrMain()
 {
 	UniqueSample();
 
+	SharedSample();
+	
 }
 
