@@ -17,6 +17,7 @@ using std::map;
 double DivFunc(double a, double b) { return a / b; };
 
 
+extern void RefSample();
 
 void FunctionMain()
 {
@@ -37,7 +38,49 @@ void FunctionMain()
 	cout << table['+'](3.15, 5.6) << endl;
 	cout << table['-'](2.15, 4.6) << endl;
 	
+	RefSample();
+	
+}
+
+
+
+void foo()
+{
+	cout << "Foo" << endl;
+}
+
+typedef void CallFoo();
+
+void ConstStr(const std::string& s)
+{
+	cout << s << " : const" << endl;
+}
+
+template<typename T>
+void CalcDouble(T t)
+{
+	t *= 2;
+}
+
+
+void RefSample()
+{
+	std::reference_wrapper<CallFoo> refWrap(foo);
+
+	refWrap();
+
+	std::string s{ "string" };
+	ConstStr(std::cref(s));
+
+	int i = 1;
+	CalcDouble(i);
+	cout << i << endl;
+
+	CalcDouble(std::ref(i));
+	cout << i << endl;
+	
 	
 	
 }
+
 
