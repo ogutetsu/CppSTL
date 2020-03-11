@@ -7,7 +7,7 @@
 extern void UtilityMain();
 extern void FunctionMain();
 extern void TupleMain();
-
+extern void SmartPtrMain();
 
 int main()
 {
@@ -27,6 +27,12 @@ int main()
 
 	TupleMain();
 
+	std::cout << " ================ " << std::endl;
+
+
+	std::cout << " ==== SmartPtr === " << std::endl;
+
+	SmartPtrMain();
 	std::cout << " ================ " << std::endl;
 
 }

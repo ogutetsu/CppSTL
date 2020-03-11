@@ -22,6 +22,9 @@
     <Filter Include="ソース ファイル\Tuple">
       <UniqueIdentifier>{a6b98001-4a03-41f6-904a-8ff4014ae7f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\SmartPtr">
+      <UniqueIdentifier>{ade19bd4-e444-495a-bbcc-c464258c0822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -35,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="Tuple.cpp">
       <Filter>ソース ファイル\Tuple</Filter>
+    </ClCompile>
+    <ClCompile Include="SmartPtr.cpp">
+      <Filter>ソース ファイル\SmartPtr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
