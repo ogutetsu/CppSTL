@@ -71,6 +71,17 @@ void UniqueSample()
 	std::unique_ptr<SampleInt2[]> uniqueArray(new SampleInt2[3]);
 }
 
+
+
+class SharedFrom : public std::enable_shared_from_this<SharedFrom>
+{
+public:
+	std::shared_ptr<SharedFrom> GetSharedPtr()
+	{
+		return shared_from_this();
+	}
+};
+
 void SharedSample()
 {
 	auto sharePtr = std::make_shared<SampleInt>(10);
@@ -86,6 +97,18 @@ void SharedSample()
 	
 	globPtr.reset();
 	cout << sharePtr.use_count() << endl;		//1
+
+
+	cout << " enable_shared_from_this " << endl;
+	std::shared_ptr<SharedFrom> sf1(new SharedFrom);
+	std::shared_ptr<SharedFrom> sf2 = sf1->GetSharedPtr();
+
+	cout << (void*)sf1.get() << endl;
+	cout << (void*)sf2.get() << endl;
+	cout << sf1.use_count() << endl;
+
+
+	
 }
 
 void SmartPtrMain()
