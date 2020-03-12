@@ -111,11 +111,31 @@ void SharedSample()
 	
 }
 
+void WeakSample()
+{
+	auto sharedPtr = std::make_shared<int>(2020);
+	std::weak_ptr<int> weakPtr(sharedPtr);
+
+	cout << "weakPtr.use_count : " << weakPtr.use_count() << endl;
+	cout << "sharedPtr.use_count : " << sharedPtr.use_count() << endl;
+
+	std::shared_ptr<int> sharedPtr1 = weakPtr.lock();
+
+	cout << "*sharedPtr1 : " << *sharedPtr1 << endl;
+
+	weakPtr.reset();
+
+	cout << "weak_ptr.expired : " << weakPtr.expired() << endl;
+}
+
 void SmartPtrMain()
 {
 	UniqueSample();
 
 	SharedSample();
+
+	WeakSample();
+	
 	
 }
 
