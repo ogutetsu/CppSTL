@@ -25,6 +25,9 @@
     <Filter Include="ソース ファイル\SmartPtr">
       <UniqueIdentifier>{ade19bd4-e444-495a-bbcc-c464258c0822}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Type">
+      <UniqueIdentifier>{0ef272af-e6b2-45c1-b311-fcc3266c7888}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="SmartPtr.cpp">
       <Filter>ソース ファイル\SmartPtr</Filter>
+    </ClCompile>
+    <ClCompile Include="Type.cpp">
+      <Filter>ソース ファイル\Type</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

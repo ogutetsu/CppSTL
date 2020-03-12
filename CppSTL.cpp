@@ -8,6 +8,7 @@ extern void UtilityMain();
 extern void FunctionMain();
 extern void TupleMain();
 extern void SmartPtrMain();
+extern void TypeMain();
 
 int main()
 {
@@ -34,6 +35,15 @@ int main()
 
 	SmartPtrMain();
 	std::cout << " ================ " << std::endl;
+
+
+
+	std::cout << " ==== Type === " << std::endl;
+
+	TypeMain();
+
+	std::cout << " ================ " << std::endl;
+
 
 }
 

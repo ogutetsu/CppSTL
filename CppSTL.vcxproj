@@ -152,6 +152,7 @@
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="SmartPtr.cpp" />
     <ClCompile Include="Tuple.cpp" />
+    <ClCompile Include="Type.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
