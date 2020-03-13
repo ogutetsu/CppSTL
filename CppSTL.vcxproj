@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="CppSTL.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="SmartPtr.cpp" />

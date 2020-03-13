@@ -28,6 +28,9 @@
     <Filter Include="ソース ファイル\Type">
       <UniqueIdentifier>{0ef272af-e6b2-45c1-b311-fcc3266c7888}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Container">
+      <UniqueIdentifier>{8492457f-9626-4727-9587-a480992caeeb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="Type.cpp">
       <Filter>ソース ファイル\Type</Filter>
+    </ClCompile>
+    <ClCompile Include="Container.cpp">
+      <Filter>ソース ファイル\Container</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

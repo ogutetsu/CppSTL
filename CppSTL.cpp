@@ -9,6 +9,7 @@ extern void FunctionMain();
 extern void TupleMain();
 extern void SmartPtrMain();
 extern void TypeMain();
+extern void ContainerMain();
 
 int main()
 {
@@ -44,6 +45,12 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+
+	std::cout << " ==== Container === " << std::endl;
+
+	ContainerMain();
+
+	std::cout << " ================ " << std::endl;
 
 }
 
