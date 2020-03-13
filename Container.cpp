@@ -26,9 +26,42 @@ void ContainerInitSample()
 	cout << endl;
 }
 
+void ContainerAccessSample()
+{
+	std::vector<int> intVec;
+	intVec.push_back(1);
+	intVec.emplace_back(2);
+
+	cout << intVec.size() << endl;
+
+	intVec.assign({ 1,2,3 });
+	for (auto v : intVec) cout << v << " ";
+	cout << endl;
+	
+	intVec.insert(intVec.begin(), 0);
+	for (auto v : intVec) cout << v << " ";
+	cout << endl;
+
+	intVec.insert(intVec.begin()+4, 4);
+	for (auto v : intVec) cout << v << " ";
+	cout << endl;
+
+	intVec.insert(intVec.end(), {5,6,7,8,9});
+	for (auto v : intVec) cout << v << " ";
+	cout << endl;
+
+	intVec.pop_back();
+	for (auto v : intVec) cout << v << " ";
+	cout << endl;
+}
+
 void ContainerMain()
 {
 	ContainerInitSample();
+
+	ContainerAccessSample();
+
+	
 }
 
 
