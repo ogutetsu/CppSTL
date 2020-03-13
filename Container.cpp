@@ -28,7 +28,7 @@ void ContainerInitSample()
 
 void ContainerAccessSample()
 {
-	std::vector<int> intVec;
+	vector<int> intVec;
 	intVec.push_back(1);
 	intVec.emplace_back(2);
 
@@ -55,11 +55,34 @@ void ContainerAccessSample()
 	cout << endl;
 }
 
+void ContainerCompareSample()
+{
+	vector<int> vec1{ 1,2,3};
+	vector<int> vec2{ 1,2,3 };
+	cout << "(vec1 == vec2) : " << (vec1 == vec2) << endl;
+
+	vector<int> vec3{ 1,2,4 };
+	cout << "(vec1 < vec3) : " << (vec1 < vec3) << endl;
+	
+	
+	map<string, int> map1{ {"abc", 123}, {"def", 345} };
+	map<string, int> map2{ {"abc", 123}, {"def", 345} };
+	cout << "(map1 == map2) : " << (map1 == map2) << endl;
+
+	unordered_map<string, int> umap1{ {"abc", 123}, {"def", 345} };
+	unordered_map<string, int> umap2{ {"Abc", 123}, {"def", 345} };
+	cout << "(umap1 == umap2) : " << (umap1 == umap2) << endl;
+}
+
 void ContainerMain()
 {
 	ContainerInitSample();
 
 	ContainerAccessSample();
+
+
+	ContainerCompareSample();
+
 
 	
 }
