@@ -155,6 +155,7 @@
     <ClCompile Include="Tuple.cpp" />
     <ClCompile Include="Type.cpp" />
     <ClCompile Include="Utility.cpp" />
+    <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

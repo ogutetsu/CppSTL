@@ -54,5 +54,8 @@
     <ClCompile Include="Container.cpp">
       <Filter>ソース ファイル\Container</Filter>
     </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>ソース ファイル\Container</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

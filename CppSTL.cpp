@@ -10,6 +10,7 @@ extern void TupleMain();
 extern void SmartPtrMain();
 extern void TypeMain();
 extern void ContainerMain();
+extern void VectorMain();
 
 int main()
 {
@@ -52,6 +53,15 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+
+
+	std::cout << " ==== Vector === " << std::endl;
+
+	VectorMain();
+
+	std::cout << " ================ " << std::endl;
+
+	
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
