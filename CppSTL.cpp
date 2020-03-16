@@ -12,6 +12,7 @@ extern void TypeMain();
 extern void ContainerMain();
 extern void VectorMain();
 extern void DequeMain();
+extern void ListMain();
 
 int main()
 {
@@ -68,6 +69,16 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+
+	std::cout << " ==== List === " << std::endl;
+
+	ListMain();
+
+	std::cout << " ================ " << std::endl;
+
+
+
+	
 
 	
 }

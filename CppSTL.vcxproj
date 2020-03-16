@@ -152,6 +152,7 @@
     <ClCompile Include="CppSTL.cpp" />
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="Function.cpp" />
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="SmartPtr.cpp" />
     <ClCompile Include="Tuple.cpp" />
     <ClCompile Include="Type.cpp" />
