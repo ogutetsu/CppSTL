@@ -11,6 +11,7 @@ extern void SmartPtrMain();
 extern void TypeMain();
 extern void ContainerMain();
 extern void VectorMain();
+extern void DequeMain();
 
 int main()
 {
@@ -60,6 +61,13 @@ int main()
 	VectorMain();
 
 	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Deque === " << std::endl;
+
+	DequeMain();
+
+	std::cout << " ================ " << std::endl;
+
 
 	
 }
