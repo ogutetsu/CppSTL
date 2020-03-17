@@ -13,6 +13,7 @@ extern void ContainerMain();
 extern void VectorMain();
 extern void DequeMain();
 extern void ListMain();
+extern void AssciativeContainerMain();
 
 int main()
 {
@@ -76,6 +77,12 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+
+	std::cout << " ==== Associative Container === " << std::endl;
+
+	AssciativeContainerMain();
+
+	std::cout << " ================ " << std::endl;
 
 
 	

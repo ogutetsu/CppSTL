@@ -63,5 +63,8 @@
     <ClCompile Include="List.cpp">
       <Filter>ソース ファイル\Container</Filter>
     </ClCompile>
+    <ClCompile Include="AssociativeContainer.cpp">
+      <Filter>ソース ファイル\Container</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
