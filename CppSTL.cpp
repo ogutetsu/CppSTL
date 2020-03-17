@@ -15,6 +15,7 @@ extern void DequeMain();
 extern void ListMain();
 extern void AssciativeContainerMain();
 extern void StackMain();
+extern void QueueMain();
 
 int main()
 {
@@ -92,6 +93,14 @@ int main()
 	StackMain();
 
 	std::cout << " ================ " << std::endl;
+
+
+	std::cout << " ==== Queue === " << std::endl;
+
+	QueueMain();
+
+	std::cout << " ================ " << std::endl;
+
 
 
 	
