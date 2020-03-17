@@ -66,5 +66,8 @@
     <ClCompile Include="AssociativeContainer.cpp">
       <Filter>ソース ファイル\Container</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>ソース ファイル\Container</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -14,6 +14,7 @@ extern void VectorMain();
 extern void DequeMain();
 extern void ListMain();
 extern void AssciativeContainerMain();
+extern void StackMain();
 
 int main()
 {
@@ -85,7 +86,13 @@ int main()
 	std::cout << " ================ " << std::endl;
 
 
-	
+
+	std::cout << " ==== Stack === " << std::endl;
+
+	StackMain();
+
+	std::cout << " ================ " << std::endl;
+
 
 	
 }
