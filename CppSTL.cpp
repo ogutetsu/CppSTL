@@ -16,6 +16,8 @@ extern void ListMain();
 extern void AssciativeContainerMain();
 extern void StackMain();
 extern void QueueMain();
+extern void IteratorMain();
+
 
 int main()
 {
@@ -98,6 +100,13 @@ int main()
 	std::cout << " ==== Queue === " << std::endl;
 
 	QueueMain();
+
+	std::cout << " ================ " << std::endl;
+
+
+	std::cout << " ==== Iterator === " << std::endl;
+
+	IteratorMain();
 
 	std::cout << " ================ " << std::endl;
 

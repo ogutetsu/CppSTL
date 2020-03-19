@@ -31,6 +31,9 @@
     <Filter Include="ソース ファイル\Container">
       <UniqueIdentifier>{8492457f-9626-4727-9587-a480992caeeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Iterator">
+      <UniqueIdentifier>{9474a274-38ed-496a-b6b6-888b824019f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="Queue.cpp">
       <Filter>ソース ファイル\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterator.cpp">
+      <Filter>ソース ファイル\Iterator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
