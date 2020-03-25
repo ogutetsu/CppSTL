@@ -17,6 +17,7 @@ extern void AssciativeContainerMain();
 extern void StackMain();
 extern void QueueMain();
 extern void IteratorMain();
+extern void FunctionObjectMain();
 
 
 int main()
@@ -110,6 +111,12 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+
+	std::cout << " ==== FunctionObject === " << std::endl;
+
+	FunctionObjectMain();
+
+	std::cout << " ================ " << std::endl;
 
 
 	
