@@ -18,7 +18,7 @@ extern void StackMain();
 extern void QueueMain();
 extern void IteratorMain();
 extern void FunctionObjectMain();
-
+extern void ForEachMain();
 
 int main()
 {
@@ -118,6 +118,12 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
+
+	std::cout << " ==== ForEach === " << std::endl;
+
+	ForEachMain();
+
+	std::cout << " ================ " << std::endl;
 
 	
 }

@@ -34,6 +34,9 @@
     <Filter Include="ソース ファイル\Iterator">
       <UniqueIdentifier>{9474a274-38ed-496a-b6b6-888b824019f3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Algorithm">
+      <UniqueIdentifier>{e22785b9-222b-48c0-9894-a2f9d4d4470d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -80,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="FunctionObject.cpp">
       <Filter>ソース ファイル\Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="ForEach.cpp">
+      <Filter>ソース ファイル\Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

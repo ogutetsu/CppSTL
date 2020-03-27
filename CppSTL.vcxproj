@@ -152,6 +152,7 @@
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="CppSTL.cpp" />
     <ClCompile Include="Deque.cpp" />
+    <ClCompile Include="ForEach.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="FunctionObject.cpp" />
     <ClCompile Include="Iterator.cpp" />
