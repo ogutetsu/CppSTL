@@ -2,6 +2,7 @@
 #include <iostream>
 #include <list>
 #include <set>
+#include <vector>
 
 
 using std::cout;
@@ -39,9 +40,24 @@ void FindSample()
 	if (it4 != Char.end()) cout << *it4 << endl;
 }
 
+void ConditionSample()
+{
+	auto even = [](int i) {return i % 2; };
+	std::vector<int> vec{ 1,2,3,4,5,6,7,8,9 };
+	cout << "any_of: " << std::any_of(vec.begin(), vec.end(), even) << endl;
+	cout << "all_of: " << std::all_of(vec.begin(), vec.end(), even) << endl;
+	cout << "none_of: " << std::none_of(vec.begin(), vec.end(), even) << endl;
+}
+
 void NonModifyMain()
 {
 	FindSample();
+
+
+	ConditionSample();
+
+
+	
 }
 
 
