@@ -49,6 +49,31 @@ void ConditionSample()
 	cout << "none_of: " << std::none_of(vec.begin(), vec.end(), even) << endl;
 }
 
+void CompareSample()
+{
+	std::string str1{ "Only For Testing Purpose." };
+	std::string str2{ "only for testing purpose." };
+
+	cout << std::equal(str1.begin(), str1.end(), str2.begin()) << endl;
+	cout << std::equal(str1.begin(), str1.end(), str2.begin(),
+	                   [](char c1, char c2) { return toupper(c1) == toupper(c2);  }) << endl;
+
+	str1 = { "Only for testing Purpose." };
+	str2 = { "Only for testing purpose." };
+	auto pair = std::mismatch(str1.begin(), str1.end(), str2.begin());
+	if(pair.first != str1.end())
+	{
+		cout << std::distance(str1.begin(), pair.first)
+			<< "at (" << *pair.first << "," << *pair.second << ")" << endl;
+	}
+	auto pair2 = std::mismatch(str1.begin(), str1.end(), str2.begin(),
+	                           [](char c1, char c2) {return toupper(c1) == toupper(c2);  });
+	if(pair2.first == str1.end())
+	{
+		cout << "str1 and str2 are equal" << endl;
+	}
+}
+
 void NonModifyMain()
 {
 	FindSample();
@@ -57,8 +82,11 @@ void NonModifyMain()
 	ConditionSample();
 
 
+	CompareSample();
+
 	
 }
+
 
 
 
