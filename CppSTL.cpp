@@ -19,6 +19,7 @@ extern void QueueMain();
 extern void IteratorMain();
 extern void FunctionObjectMain();
 extern void ForEachMain();
+extern void NonModifyMain();
 
 int main()
 {
@@ -122,6 +123,12 @@ int main()
 	std::cout << " ==== ForEach === " << std::endl;
 
 	ForEachMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== NonModify === " << std::endl;
+
+	NonModifyMain();
 
 	std::cout << " ================ " << std::endl;
 
