@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <array>
 #include <iostream>
 #include <list>
 #include <set>
@@ -74,6 +75,22 @@ void CompareSample()
 	}
 }
 
+void SerachSample()
+{
+	std::array<int, 10> arr1{ 0,1,2,3,4,5,6,7,8,9 };
+	std::array<int, 5> arr2{ 3,4,-5, 6,7 };
+
+	auto fwdItr = std::search(arr1.begin(), arr1.end(), arr2.begin(), arr2.end());
+	if (fwdItr == arr1.end()) cout << "arr2 not in arr1." << endl;
+
+	auto fwdItr2 = std::search(arr1.begin(), arr1.end(), arr2.begin(), arr2.end(),
+	                           [](int a, int b) {return std::abs(a) == std::abs(b); });
+	if (fwdItr2 != arr1.end())
+	{
+		cout << "arr2 at position " << std::distance(arr1.begin(), fwdItr2) << " in arr1." << endl;
+	}
+}
+
 void NonModifyMain()
 {
 	FindSample();
@@ -84,7 +101,7 @@ void NonModifyMain()
 
 	CompareSample();
 
-	
+	SerachSample();
 }
 
 
