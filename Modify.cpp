@@ -66,15 +66,35 @@ void RemoveSample()
 	cout << str << endl;
 }
 
+
+int getNext()
+{
+	static int next{ 0 };
+	return ++next;
+}
+
+
+void GenerateSample()
+{
+	std::vector<int> vec(10);
+	std::fill(vec.begin(), vec.end(), 2011);
+	for (auto v : vec) cout << v << " ";
+	cout << endl;
+	
+	std::generate_n(vec.begin(), 5, getNext);
+	for (auto v : vec) cout << v << " ";
+	cout << endl;
+}
+
 void ModifyMain()
 {
 	CopySample();
 
 	ReplaceMain();
 
-
 	RemoveSample();
 
+	GenerateSample();
 	
 }
 
