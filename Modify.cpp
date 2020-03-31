@@ -100,6 +100,25 @@ void MoveSample()
 	cout << str2 << endl;
 }
 
+void RangeSample()
+{
+	std::vector<int> vec{ 0,1,2,3,4,5,6,7,8,9 };
+	std::vector<int> vec2(9);
+	std::swap(vec, vec2);
+	cout << "vec : ";
+	for (auto v : vec) cout << v << " ";
+	cout << endl;
+	cout << "vec2 : ";
+	for (auto v : vec2) cout << v << " ";
+	cout << endl;
+
+	std::string str{ "abcdefghijk" };
+	std::string str2{ "-----------" };
+	std::swap_ranges(str.begin(), str.begin() + 5, str2.begin() + 5);
+	cout << "str  : " << str << endl;
+	cout << "str2 : " << str2 << endl;
+}
+
 void ModifyMain()
 {
 	CopySample();
@@ -112,6 +131,7 @@ void ModifyMain()
 
 	MoveSample();
 
+	RangeSample();
 	
 	
 }
