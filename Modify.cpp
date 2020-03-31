@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <iostream>
+#include <cctype>
 #include <vector>
 
 using std::cout;
@@ -46,11 +47,33 @@ void ReplaceMain()
 	cout << "replace_copy_if \'3\' to \'4\' : " << str3 << endl;
 }
 
+void RemoveSample()
+{
+	std::vector<int> vec{ 0,1,2,3,4,5,6,7,8,9 };
+	auto it = std::remove_if(vec.begin(), vec.end(),
+	                         [](int a) {return a % 2; });
+	for (auto v : vec) cout << v << " ";
+	cout << endl;
+
+	vec.erase(it, vec.end());
+	for (auto v : vec) cout << v << " ";
+	cout << endl;
+
+	std::string str{ "Only for Testing Purpose" };
+	str.erase(std::remove_if(str.begin(), str.end(),
+	                         [](char c) { return std::isupper(c); }));
+
+	cout << str << endl;
+}
+
 void ModifyMain()
 {
 	CopySample();
 
 	ReplaceMain();
+
+
+	RemoveSample();
 
 	
 }
