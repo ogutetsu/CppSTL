@@ -119,6 +119,43 @@ void RangeSample()
 	cout << "str2 : " << str2 << endl;
 }
 
+void TransformSample()
+{
+	std::string str{ "abcdefghijklmnopqrstuvwxyz" };
+	std::transform(str.begin(), str.end(), str.begin(),
+	               [](char c) { return std::toupper(c); });
+
+	cout << str << endl;
+
+	std::vector<std::string> vecStr{ "Only", "for", "testing", "purpose" };
+	std::vector<std::string> vecStr2(4, "-");
+	std::vector<std::string> vecRes;
+	std::transform(vecStr.begin(), vecStr.end(),
+	               vecStr2.begin(), std::back_inserter(vecRes),
+	               [](std::string a, std::string b) {return std::string(b) + a + b; });
+	for (auto v : vecRes) cout << v << " ";
+	cout << endl;
+}
+
+void ReverseSample()
+{
+	std::string str{ "123456789" };
+	std::reverse(str.begin(), str.begin() + 5);
+	cout << str << endl;
+}
+
+void RotateSample()
+{
+	std::string str{ "12345" };
+	for(auto i = 0; i < str.size(); i++)
+	{
+		std::string tmp{ str };
+		std::rotate(tmp.begin(), tmp.begin() + i, tmp.end());
+		cout << tmp << " ";
+	}
+	cout << endl;
+}
+
 void ModifyMain()
 {
 	CopySample();
@@ -132,6 +169,13 @@ void ModifyMain()
 	MoveSample();
 
 	RangeSample();
+
+	TransformSample();
+
+	ReverseSample();
+	
+	RotateSample();
+
 	
 	
 }
