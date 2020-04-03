@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <iostream>
 #include <cctype>
+#include <chrono>
+#include <random>
 #include <vector>
 
 using std::cout;
@@ -156,6 +158,20 @@ void RotateSample()
 	cout << endl;
 }
 
+void ShuffleSample()
+{
+	std::vector<int> vec1{ 0,1,2,3,4,5,6,7,8,9 };
+	std::vector<int> vec2(vec1);
+	std::random_shuffle(vec1.begin(), vec1.end());
+	for (auto v : vec1) cout << v << " ";
+	cout << endl;
+
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	std::shuffle(vec2.begin(), vec2.end(), std::default_random_engine(seed));
+	for (auto v : vec2) cout << v << " ";
+	cout << endl;
+}
+
 void ModifyMain()
 {
 	CopySample();
@@ -176,6 +192,7 @@ void ModifyMain()
 	
 	RotateSample();
 
+	ShuffleSample();
 	
 	
 }
