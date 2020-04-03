@@ -172,6 +172,24 @@ void ShuffleSample()
 	cout << endl;
 }
 
+void UniqueSample()
+{
+	std::vector<int> vec{ 0,0,1,1,2,2,3,4,4,5,3,6,7,8,9,9,2,1 };
+	vec.erase(std::unique(vec.begin(), vec.end()), vec.end());
+	for (auto v : vec) cout << v << " ";
+	cout << endl;
+
+	std::vector<int> vec2{ 1,4,3,3,3,5,9,8,0,2,4,5,7,1,8,8,6,3,2,4 };
+	std::vector<int> resVec;
+	resVec.reserve((vec2.size()));
+	std::unique_copy(vec2.begin(), vec2.end(), std::back_inserter(resVec),
+	                 [](int a, int b) {return (a % 2) == (b % 2); });
+	for (auto v : vec2) cout << v << " ";
+	cout << endl;
+	for (auto v : resVec) cout << v << " ";
+	cout << endl;
+}
+
 void ModifyMain()
 {
 	CopySample();
@@ -193,7 +211,9 @@ void ModifyMain()
 	RotateSample();
 
 	ShuffleSample();
-	
+
+	UniqueSample();
+
 	
 }
 
