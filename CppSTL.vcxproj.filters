@@ -105,5 +105,8 @@
     <ClCompile Include="Merge.cpp">
       <Filter>ソース ファイル\Algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="Heap.cpp">
+      <Filter>ソース ファイル\Algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

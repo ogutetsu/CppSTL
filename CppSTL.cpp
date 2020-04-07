@@ -25,6 +25,7 @@ extern void PartitionMain();
 extern void SortMain();
 extern void BinarySearchMain();
 extern void MergeMain();
+extern void HeapMain();
 
 int main()
 {
@@ -164,6 +165,12 @@ int main()
 	std::cout << " ==== Merge === " << std::endl;
 
 	MergeMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Heap === " << std::endl;
+
+	HeapMain();
 
 	std::cout << " ================ " << std::endl;
 
