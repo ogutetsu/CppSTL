@@ -21,6 +21,7 @@ extern void FunctionObjectMain();
 extern void ForEachMain();
 extern void NonModifyMain();
 extern void ModifyMain();
+extern void PartitionMain();
 
 int main()
 {
@@ -136,6 +137,12 @@ int main()
 	std::cout << " ==== Modify === " << std::endl;
 
 	ModifyMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Pertition === " << std::endl;
+
+	PartitionMain();
 
 	std::cout << " ================ " << std::endl;
 
