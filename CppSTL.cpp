@@ -23,6 +23,7 @@ extern void NonModifyMain();
 extern void ModifyMain();
 extern void PartitionMain();
 extern void SortMain();
+extern void BinarySearchMain();
 
 int main()
 {
@@ -150,6 +151,12 @@ int main()
 	std::cout << " ==== Sort === " << std::endl;
 
 	SortMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== BinarySearch === " << std::endl;
+
+	BinarySearchMain();
 
 	std::cout << " ================ " << std::endl;
 

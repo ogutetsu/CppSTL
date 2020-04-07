@@ -149,6 +149,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AssociativeContainer.cpp" />
+    <ClCompile Include="BinarySearch.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="CppSTL.cpp" />
     <ClCompile Include="Deque.cpp" />
