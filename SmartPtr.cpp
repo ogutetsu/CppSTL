@@ -37,7 +37,7 @@ struct SampleInt2
 int SampleInt2::count = 0;
 
 
-void UniqueSample()
+void UniquePtrSample()
 {
 	std::unique_ptr<int> uniquePtr1(new int(11));
 	//std::unique_ptr<int> uniquePtr2 = uniquePtr1;  Error
@@ -130,7 +130,7 @@ void WeakSample()
 
 void SmartPtrMain()
 {
-	UniqueSample();
+	UniquePtrSample();
 
 	SharedSample();
 
