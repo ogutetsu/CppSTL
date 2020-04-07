@@ -162,6 +162,7 @@
     <ClCompile Include="Partition.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SmartPtr.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Tuple.cpp" />
     <ClCompile Include="Type.cpp" />

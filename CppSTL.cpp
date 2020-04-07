@@ -22,6 +22,7 @@ extern void ForEachMain();
 extern void NonModifyMain();
 extern void ModifyMain();
 extern void PartitionMain();
+extern void SortMain();
 
 int main()
 {
@@ -143,6 +144,12 @@ int main()
 	std::cout << " ==== Pertition === " << std::endl;
 
 	PartitionMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Sort === " << std::endl;
+
+	SortMain();
 
 	std::cout << " ================ " << std::endl;
 
