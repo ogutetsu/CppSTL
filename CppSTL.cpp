@@ -24,6 +24,7 @@ extern void ModifyMain();
 extern void PartitionMain();
 extern void SortMain();
 extern void BinarySearchMain();
+extern void MergeMain();
 
 int main()
 {
@@ -157,6 +158,12 @@ int main()
 	std::cout << " ==== BinarySearch === " << std::endl;
 
 	BinarySearchMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Merge === " << std::endl;
+
+	MergeMain();
 
 	std::cout << " ================ " << std::endl;
 
