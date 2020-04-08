@@ -26,6 +26,7 @@ extern void SortMain();
 extern void BinarySearchMain();
 extern void MergeMain();
 extern void HeapMain();
+extern void MinMaxElementMain();
 
 int main()
 {
@@ -171,6 +172,12 @@ int main()
 	std::cout << " ==== Heap === " << std::endl;
 
 	HeapMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== MinMaxElement === " << std::endl;
+
+	MinMaxElementMain();
 
 	std::cout << " ================ " << std::endl;
 
