@@ -111,5 +111,8 @@
     <ClCompile Include="MinMaxElement.cpp">
       <Filter>ソース ファイル\Algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="Permutation.cpp">
+      <Filter>ソース ファイル\Algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -164,6 +164,7 @@
     <ClCompile Include="Iterator.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Partition.cpp" />
+    <ClCompile Include="Permutation.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="SmartPtr.cpp" />
     <ClCompile Include="Sort.cpp" />

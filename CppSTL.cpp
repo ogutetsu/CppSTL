@@ -27,6 +27,8 @@ extern void BinarySearchMain();
 extern void MergeMain();
 extern void HeapMain();
 extern void MinMaxElementMain();
+extern void PermutationMain();
+
 
 int main()
 {
@@ -178,6 +180,12 @@ int main()
 	std::cout << " ==== MinMaxElement === " << std::endl;
 
 	MinMaxElementMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Permutation === " << std::endl;
+
+	PermutationMain();
 
 	std::cout << " ================ " << std::endl;
 
