@@ -28,6 +28,7 @@ extern void MergeMain();
 extern void HeapMain();
 extern void MinMaxElementMain();
 extern void PermutationMain();
+extern void NumericMain();
 
 
 int main()
@@ -186,6 +187,12 @@ int main()
 	std::cout << " ==== Permutation === " << std::endl;
 
 	PermutationMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Numeric === " << std::endl;
+
+	NumericMain();
 
 	std::cout << " ================ " << std::endl;
 

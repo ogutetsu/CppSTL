@@ -163,6 +163,7 @@
     <ClCompile Include="FunctionObject.cpp" />
     <ClCompile Include="Iterator.cpp" />
     <ClCompile Include="List.cpp" />
+    <ClCompile Include="Numeric.cpp" />
     <ClCompile Include="Partition.cpp" />
     <ClCompile Include="Permutation.cpp" />
     <ClCompile Include="Queue.cpp" />
