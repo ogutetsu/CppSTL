@@ -37,6 +37,9 @@
     <Filter Include="ソース ファイル\Algorithm">
       <UniqueIdentifier>{e22785b9-222b-48c0-9894-a2f9d4d4470d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\String">
+      <UniqueIdentifier>{454301c4-267f-487d-aa2c-ed865708ad44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -119,6 +122,9 @@
     </ClCompile>
     <ClCompile Include="Random.cpp">
       <Filter>ソース ファイル\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>ソース ファイル\String</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

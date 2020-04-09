@@ -30,7 +30,7 @@ extern void MinMaxElementMain();
 extern void PermutationMain();
 extern void NumericMain();
 extern void RandomMain();
-
+extern void StringMain();
 
 int main()
 {
@@ -200,6 +200,12 @@ int main()
 	std::cout << " ==== Random === " << std::endl;
 
 	RandomMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== String === " << std::endl;
+
+	StringMain();
 
 	std::cout << " ================ " << std::endl;
 

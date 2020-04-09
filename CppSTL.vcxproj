@@ -171,6 +171,7 @@
     <ClCompile Include="SmartPtr.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="String.cpp" />
     <ClCompile Include="Tuple.cpp" />
     <ClCompile Include="Type.cpp" />
     <ClCompile Include="Utility.cpp" />
