@@ -1,3 +1,4 @@
+#include <functional>
 #include <string>
 #include <iostream>
 
@@ -32,12 +33,40 @@ void CStringConvertSample()
 	cout << str2 << endl;
 }
 
+void StringSizeSample()
+{
+	std::function<void(const std::string&)> stringInfo = 
+		[](const std::string& s)
+	{
+		cout << s << " : ";
+		cout << s.size() << " ";
+		cout << s.capacity() << " ";
+		cout << s.max_size() << " ";
+		cout << endl;
+	};
+
+	std::string str;
+	stringInfo(str);
+
+	str += "123345";
+	stringInfo(str);
+
+	str.resize(30);
+	stringInfo(str);
+
+	str.reserve(100);
+	stringInfo(str);
+	
+	str.shrink_to_fit();
+	stringInfo(str);
+}
+
 void StringMain()
 {
 	StringConstructorSample();
 
 	CStringConvertSample();
-	
 
+	StringSizeSample();
 	
 }
