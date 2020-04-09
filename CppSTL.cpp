@@ -29,6 +29,7 @@ extern void HeapMain();
 extern void MinMaxElementMain();
 extern void PermutationMain();
 extern void NumericMain();
+extern void RandomMain();
 
 
 int main()
@@ -193,6 +194,12 @@ int main()
 	std::cout << " ==== Numeric === " << std::endl;
 
 	NumericMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Random === " << std::endl;
+
+	RandomMain();
 
 	std::cout << " ================ " << std::endl;
 

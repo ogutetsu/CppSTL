@@ -117,5 +117,8 @@
     <ClCompile Include="Numeric.cpp">
       <Filter>ソース ファイル\Algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>ソース ファイル\Algorithm</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
