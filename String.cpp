@@ -202,6 +202,21 @@ void StringModifySample()
 	cout << str << endl;
 }
 
+void StringNumericConversionSample()
+{
+	std::string maxLongString = std::to_string(std::numeric_limits<long>::max());
+	std::wstring maxLongWstring = std::to_wstring(std::numeric_limits<long>::max());
+
+	cout << maxLongString << endl;
+	std::wcout << maxLongWstring << endl;
+
+	std::string str("1000");
+	cout << "str : " << std::stoi(str) << endl;
+	cout << "std::stoi(str, nullptr, 16) : " << std::stoi(str, nullptr, 16) << endl;
+	cout << "std::stoi(str, nullptr, 8) ; " << std::stoi(str, nullptr, 8) << endl;
+	cout << "std::stoi(str, nullptr, 2) : " << std::stoi(str, nullptr, 2) << endl;
+}
+
 void StringMain()
 {
 	StringConstructorSample();
@@ -221,6 +236,9 @@ void StringMain()
 	StringFindSample();
 
 	StringModifySample();
+
+	StringNumericConversionSample();
+	
 	
 	
 }
