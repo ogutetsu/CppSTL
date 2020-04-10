@@ -129,6 +129,28 @@ void StringInputOutputSample()
 	cout << endl;
 }
 
+void StringFindSample()
+{
+	std::string str;
+	auto idx = str.find("a");
+	if (idx == std::string::npos) cout << "string::npos" << endl;
+
+	str = { "abcdef123456789abcdefghijklmn" };
+	std::string str2{ "12" };
+
+	cout << "str : " << str << endl;
+	
+	cout << "str.find('b') : " << str.find('b') << endl;
+	cout << "str.rfind('b') : "<< str.rfind('b') << endl;
+	cout << "str.find(str2) : " << str.find(str2) << endl;
+	
+	cout << "str.find_first_of(\"345\") : " << str.find_first_of("345") << endl;
+	cout << "str.find_last_of(\"345\") : " << str.find_last_of("345") << endl;
+	cout << "str.find_first_of(\"145\") : " << str.find_first_of("145") << endl;
+	cout << "str.find_first_not_of(\"345\") : " << str.find_first_not_of("345") << endl;
+	cout << "str.find_last_not_of(\"345\") : " << str.find_last_not_of("345") << endl;
+}
+
 void StringMain()
 {
 	StringConstructorSample();
@@ -144,6 +166,8 @@ void StringMain()
 
 	StringInputOutputSample();
 
-	
+
+	StringFindSample();
+
 	
 }
