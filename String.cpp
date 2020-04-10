@@ -70,6 +70,16 @@ void StringCompareSample()
 	cout << (first <= first) << endl;
 }
 
+void StringAccessSample()
+{
+	std::string str = { "0123456789" };
+	cout << "str.front() : " << str.front() << endl;
+	cout << "str.back() : " << str.back() << endl;
+	cout << "str[0] : "<< str[0] << " str[1] : " << str[1] << endl;
+
+	cout << "*(&str[0] + 5) : " << *(&str[0] + 5) << endl;
+}
+
 void StringMain()
 {
 	StringConstructorSample();
@@ -79,6 +89,10 @@ void StringMain()
 	StringSizeSample();
 
 	StringCompareSample();
- 
+
+
+	StringAccessSample();
+	
+	
 	
 }
