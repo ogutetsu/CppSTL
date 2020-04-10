@@ -1,6 +1,8 @@
+#include <fstream>
 #include <functional>
 #include <string>
 #include <iostream>
+#include <vector>
 
 using std::cout;
 using std::endl;
@@ -80,6 +82,53 @@ void StringAccessSample()
 	cout << "*(&str[0] + 5) : " << *(&str[0] + 5) << endl;
 }
 
+void StringInputOutputSample()
+{
+	std::function<void(const char*)> writeFile =
+		[](const char* fileName)
+	{
+		std::ofstream file(fileName);
+		if(!file)
+		{
+			std::cerr << "Could not open the file " << fileName << ".";
+			exit(EXIT_FAILURE);
+		}
+		
+		std::vector<std::string> lines;
+		lines.push_back(std::string("sample"));
+		lines.push_back(std::string("file"));
+		for (auto v : lines) file << v << endl;
+		
+		
+	};
+
+	std::function<std::vector<std::string>(const char*)> readFile =
+		[](const char* fileName)
+	{
+		std::ifstream file(fileName);
+		if (!file)
+		{
+			std::cerr << "Could not open the file " << fileName << ".";
+			exit(EXIT_FAILURE);
+		}
+		std::vector<std::string> lines;
+		std::string line;
+		while (std::getline(file, line)) lines.push_back(line);
+		
+		return lines;
+	};
+
+
+	std::string fileName("stringIO.txt");
+	
+	writeFile(fileName.c_str());
+
+	std::vector<std::string> lines = readFile(fileName.c_str());
+	int num = 0;
+	for (auto v : lines) cout << ++num << ": " << v << endl;
+	cout << endl;
+}
+
 void StringMain()
 {
 	StringConstructorSample();
@@ -92,7 +141,9 @@ void StringMain()
 
 
 	StringAccessSample();
-	
+
+	StringInputOutputSample();
+
 	
 	
 }
