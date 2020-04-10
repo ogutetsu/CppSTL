@@ -151,6 +151,57 @@ void StringFindSample()
 	cout << "str.find_last_not_of(\"345\") : " << str.find_last_not_of("345") << endl;
 }
 
+void StringModifySample()
+{
+	std::string str{ "New string" };
+
+	str.assign({ "Sample String" }, 4, std::string::npos);
+	cout << str << endl;
+	str.assign(5, '-');
+	cout << str << endl;
+
+	str = { "0123456789" };
+	str.erase(7, 2);
+	cout << str << endl;
+	str.erase(str.begin() + 2, str.end());
+	cout << str << endl;
+	str.pop_back();
+	cout << str << endl;
+
+	str = "01234";
+	cout << str << endl;
+	str += "56";
+	cout << str << endl;
+	str += '7';
+	cout << str << endl;
+	str += {'8', '9'};
+	cout << str << endl;
+	str.append(str);
+	cout << str << endl;
+	str.append(str, 1, 5);
+	cout << str << endl;
+	str.push_back('0');
+	cout << str << endl;
+
+	str = { "345" };
+	cout << str << endl;
+	str.insert(3, "6789");
+	cout << str << endl;
+	str.insert(0, "012");
+	cout << str << endl;
+
+	str = { "onlu for testing purpose." };
+	cout << str << endl;
+	str.replace(0, 0, "O");
+	cout << str << endl;
+	str.replace(16, 8, "");
+	cout << str << endl;
+	str.replace(4, 0, 5, 'y');
+	cout << str << endl;
+	str.replace(str.begin(), str.end(), "New String");
+	cout << str << endl;
+}
+
 void StringMain()
 {
 	StringConstructorSample();
@@ -169,5 +220,7 @@ void StringMain()
 
 	StringFindSample();
 
+	StringModifySample();
+	
 	
 }
