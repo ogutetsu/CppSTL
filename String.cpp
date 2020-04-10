@@ -61,6 +61,15 @@ void StringSizeSample()
 	stringInfo(str);
 }
 
+void StringCompareSample()
+{
+	std::string first{ "aaa" };
+	std::string second{ "aaaa" };
+
+	cout << (first < second) << endl;
+	cout << (first <= first) << endl;
+}
+
 void StringMain()
 {
 	StringConstructorSample();
@@ -68,5 +77,8 @@ void StringMain()
 	CStringConvertSample();
 
 	StringSizeSample();
+
+	StringCompareSample();
+ 
 	
 }
