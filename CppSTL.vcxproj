@@ -168,6 +168,7 @@
     <ClCompile Include="Permutation.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="Regex.cpp" />
     <ClCompile Include="SmartPtr.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Stack.cpp" />

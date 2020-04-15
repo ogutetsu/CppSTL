@@ -31,6 +31,7 @@ extern void PermutationMain();
 extern void NumericMain();
 extern void RandomMain();
 extern void StringMain();
+extern void RegexMain();
 
 int main()
 {
@@ -206,6 +207,12 @@ int main()
 	std::cout << " ==== String === " << std::endl;
 
 	StringMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== Regex === " << std::endl;
+
+	RegexMain();
 
 	std::cout << " ================ " << std::endl;
 
