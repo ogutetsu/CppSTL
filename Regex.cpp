@@ -99,11 +99,37 @@ void RegexMatchSample()
 	
 }
 
+void RegexSearchSample()
+{
+	std::regex crgx("([01]?[0-9]|2[0-3]):[0-5][0-9]");
+
+	std::cmatch cmatch;
+
+	const char* ctime{ "Now it is 23:10." };
+	if(std::regex_search(ctime, cmatch, crgx))
+	{
+		cout << ctime << endl;
+		cout << "Time: " << cmatch[0] << endl;
+	}
+
+	std::smatch smatch;
+	std::string stime{ "Now it is 23:10." };
+	if (std::regex_search(stime, smatch, crgx))
+	{
+		cout << stime << endl;
+		cout << "Time: " << smatch[0] << endl;
+	}
+}
+
 void RegexMain()
 {
 	RegexObjectSample();
 
 	RegexMatchSample();
+
+
+	RegexSearchSample();
+
 	
 
 
