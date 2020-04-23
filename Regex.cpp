@@ -1,6 +1,7 @@
 #include <functional>
 #include <iostream>
 #include <regex>
+#include <unordered_map>
 
 
 using std::cout;
@@ -151,6 +152,59 @@ void RegexFormatSample()
 	}
 }
 
+void RegexIteratorSample()
+{
+	std::string text{ "That's a (to me) amazingly frequent question. It may be the most f\
+requently asked question. Surprisingly, C++11 feels like a new language: The pieces \
+just fit together better than they used to and I find a higher-level style of progra\
+mming more natural than before and as efficient as ever." };
+
+	std::regex wordReg{ R"(\w+)" };
+	std::sregex_iterator wordItBegin(text.begin(), text.end(), wordReg);
+	const std::sregex_iterator wordItEnd;
+	std::unordered_map<std::string, std::size_t> allWords;
+	for(; wordItBegin != wordItEnd; wordItBegin++)
+	{
+		allWords[wordItBegin->str()]++;
+	}
+	for(auto v : allWords)
+	{
+		cout << "(" << v.first << ":" << v.second << ")";
+	}
+	cout << endl;
+
+	std::string bookText = std::string{ "Pete Becker,The C++ Standard Library Extensions,2006:" } +
+		std::string{ "Nicolai Josuttis,The C++ Standard Library,1999" };
+
+	std::regex regBook(R"((\w+)\s(\w+),([\w\s\+]*),(\d{4}))");
+	std::sregex_token_iterator bookItBegin(bookText.begin(), bookText.end(), regBook);
+
+	const std::sregex_token_iterator bookItEnd;
+	while(bookItBegin != bookItEnd)
+	{
+		cout << *bookItBegin++ << endl;
+	}
+	cout << endl;
+
+	std::sregex_token_iterator bookItNameIssueBegin(bookText.begin(), bookText.end(), regBook, { {2,4} });
+	const std::sregex_token_iterator bookItNameIssueEnd;
+
+	while(bookItNameIssueBegin != bookItNameIssueEnd)
+	{
+		cout << *bookItNameIssueBegin++ << ", ";
+		cout << *bookItNameIssueBegin++ << endl;
+	}
+	
+	std::regex regBookNeg(":");
+	std::sregex_token_iterator bookItNegBegin(bookText.begin(), bookText.end(), regBookNeg, -1);
+	
+	const std::sregex_token_iterator boolItNegEnd;
+	while(bookItNegBegin != boolItNegEnd)
+	{
+		cout << *bookItNegBegin++ << endl;
+	}
+}
+
 void RegexMain()
 {
 	RegexObjectSample();
@@ -165,8 +219,12 @@ void RegexMain()
 
 	RegexFormatSample();
 	
-	
+	RegexIteratorSample();
 
+	
+	
+	
+	
 	
 }
 
