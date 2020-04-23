@@ -72,6 +72,31 @@ void RegexMatchSample()
 			}
 		}
 	}
+
+	std::string numberRegEx(R"([-+]?([0-9]*\.[0-9]+|[0-9]+))");
+	rgx = std::regex(numberRegEx);
+	const char* numChar{ "2020" };
+
+	if(std::regex_match(numChar, rgx))
+	{
+		cout << numChar << " is a number." << endl;
+	}
+
+	const std::string numStr{ "3.14159265359" };
+	if(std::regex_match(numStr, rgx))
+	{
+		cout << numStr << " is a number." << endl;
+	}
+
+	const std::vector<char> numVec{ {'-', '2', '.', '7', '1', '8', '2', '8','7', '1', '2', '8'} };
+	if(std::regex_match(numVec.begin(), numVec.end(), rgx))
+	{
+		for (auto v : numVec) { cout << v; };
+		cout << " is a number." << endl;
+	}
+	
+
+	
 }
 
 void RegexMain()
