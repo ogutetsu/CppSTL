@@ -123,7 +123,6 @@ void RegexSearchSample()
 
 void RegexReplaceSample()
 {
-	std::string future{ "Future" };
 	std::string unofficialName{ "The unofficial name of the new C++ standard is C++0x." };
 
 	std::regex rgxCpp{ R"(C\+\+0x)" };
@@ -144,6 +143,8 @@ void RegexMain()
 
 	RegexReplaceSample();
 
+
+	
 
 	
 }
