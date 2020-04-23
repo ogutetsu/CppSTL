@@ -132,6 +132,25 @@ void RegexReplaceSample()
 	cout << newName << endl;
 }
 
+void RegexFormatSample()
+{
+	const std::string unofficial{ "unofficial, C++0x" };
+	const std::string official{ "official, C++11" };
+
+	std::regex regValues{ "(.*),(.*)" };
+	std::string standardText{ "The $1 name of the new C++ standard is $2." };
+	std::string textNow = std::regex_replace(unofficial, regValues, standardText);
+	cout << textNow << endl;
+
+	std::smatch smatch;
+	if(std::regex_match(official, smatch, regValues))
+	{
+		cout << smatch.str() << endl;
+		std::string textFuture = smatch.format(standardText);
+		cout << textFuture << endl;
+	}
+}
+
 void RegexMain()
 {
 	RegexObjectSample();
@@ -144,6 +163,8 @@ void RegexMain()
 	RegexReplaceSample();
 
 
+	RegexFormatSample();
+	
 	
 
 	
