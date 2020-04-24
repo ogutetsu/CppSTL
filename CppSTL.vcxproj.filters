@@ -138,5 +138,8 @@
     <ClCompile Include="IOStream.cpp">
       <Filter>ソース ファイル\IOStream</Filter>
     </ClCompile>
+    <ClCompile Include="StringStream.cpp">
+      <Filter>ソース ファイル\IOStream</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

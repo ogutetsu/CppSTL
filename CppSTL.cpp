@@ -33,6 +33,7 @@ extern void RandomMain();
 extern void StringMain();
 extern void RegexMain();
 extern void IOStreamMain();
+extern void StringStreamMain();
 
 int main()
 {
@@ -220,6 +221,12 @@ int main()
 	std::cout << " ==== IOStream === " << std::endl;
 
 	IOStreamMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== SStream === " << std::endl;
+
+	StringStreamMain();
 
 	std::cout << " ================ " << std::endl;
 
