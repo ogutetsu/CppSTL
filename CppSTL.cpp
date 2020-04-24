@@ -32,6 +32,7 @@ extern void NumericMain();
 extern void RandomMain();
 extern void StringMain();
 extern void RegexMain();
+extern void IOStreamMain();
 
 int main()
 {
@@ -213,6 +214,12 @@ int main()
 	std::cout << " ==== Regex === " << std::endl;
 
 	RegexMain();
+
+	std::cout << " ================ " << std::endl;
+
+	std::cout << " ==== IOStream === " << std::endl;
+
+	IOStreamMain();
 
 	std::cout << " ================ " << std::endl;
 

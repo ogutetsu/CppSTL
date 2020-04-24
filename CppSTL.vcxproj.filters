@@ -43,6 +43,9 @@
     <Filter Include="ソース ファイル\RegularExpressions">
       <UniqueIdentifier>{34fc5c6f-a66d-424d-8a2b-9432b28a2969}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\IOStream">
+      <UniqueIdentifier>{4b7da9b2-4365-42a9-9968-c4d4010d168e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -131,6 +134,9 @@
     </ClCompile>
     <ClCompile Include="Regex.cpp">
       <Filter>ソース ファイル\RegularExpressions</Filter>
+    </ClCompile>
+    <ClCompile Include="IOStream.cpp">
+      <Filter>ソース ファイル\IOStream</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
