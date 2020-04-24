@@ -1,3 +1,5 @@
+#include <fstream>
+#include <functional>
 #include <iostream>
 #include <sstream>
 
@@ -41,8 +43,59 @@ void SStreamSample()
 	cout << "5e10: " << std::fixed << StringTo<double>("5e10") << endl;
 }
 
+void RandomAccessSample()
+{
+	std::function<void(const std::string)> writeFile = [](const std::string name)
+	{
+		std::ofstream outFile(name);
+		if(!outFile)
+		{
+			std::cerr << "Could not open file " << name << endl;
+		}
+		else
+		{
+			for(unsigned int i = 0; i < 10; i++)
+			{
+				outFile << i << "       0123456789" << endl;
+			}
+		}
+	};
+
+
+	cout << std::dec;
+	std::string line;
+
+	std::string randTxt{ "random.txt" };
+	writeFile(randTxt);
+	std::ifstream inFile(randTxt);
+	if(inFile)
+	{
+		cout << "=== inFile.rdbuf() === " << endl;
+		cout <<  inFile.rdbuf() << endl;
+		cout << "inFile.tellg() : " << inFile.tellg() << endl;
+
+		inFile.seekg(0);
+		std::getline(inFile, line);
+		cout << line << endl;
+
+		inFile.seekg(20, std::ios::cur);
+		std::getline(inFile, line);
+		cout << line << endl;
+
+		inFile.seekg(-20, std::ios::end);
+		std::getline(inFile, line);
+		cout << line << endl;
+
+		
+	}
+}
+
 void StringStreamMain()
 {
 	SStreamSample();
+
+	RandomAccessSample();
+	
+		
 }
 
