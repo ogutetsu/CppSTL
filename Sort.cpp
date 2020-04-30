@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-
+#include <string>
 
 using std::cout;
 using std::endl;

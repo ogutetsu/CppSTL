@@ -1,7 +1,7 @@
 #include <iostream>
 #include <map>
 #include <random>
-
+#include <string>
 
 
 using std::cout;

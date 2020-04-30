@@ -46,6 +46,9 @@
     <Filter Include="ソース ファイル\IOStream">
       <UniqueIdentifier>{4b7da9b2-4365-42a9-9968-c4d4010d168e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Filesystem">
+      <UniqueIdentifier>{cc443bd9-a94a-4520-acad-0c296fdbb656}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -140,6 +143,9 @@
     </ClCompile>
     <ClCompile Include="StringStream.cpp">
       <Filter>ソース ファイル\IOStream</Filter>
+    </ClCompile>
+    <ClCompile Include="Filesystem.cpp">
+      <Filter>ソース ファイル\Filesystem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

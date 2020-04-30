@@ -4,6 +4,7 @@
 #include <chrono>
 #include <random>
 #include <vector>
+#include <string>
 
 using std::cout;
 using std::endl;
@@ -162,7 +163,9 @@ void ShuffleSample()
 {
 	std::vector<int> vec1{ 0,1,2,3,4,5,6,7,8,9 };
 	std::vector<int> vec2(vec1);
-	std::random_shuffle(vec1.begin(), vec1.end());
+	std::mt19937 mt;
+	std::shuffle(vec1.begin(), vec1.end(), mt);
+	//std::random_shuffle(vec1.begin(), vec1.end());
 	for (auto v : vec1) cout << v << " ";
 	cout << endl;
 
