@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <functional>
+#include <string>
 
 using std::cout;
 using std::endl;
@@ -12,6 +13,7 @@ using std::endl;
 
 namespace fs = std::filesystem;
 
+using namespace std::chrono_literals;
 
 
 void FilesystemLibSample()
@@ -73,6 +75,52 @@ void FilesystemPermission()
 	fs::remove("file.txt");
 }
 
+void FilesystemNonMemberSample()
+{
+
+	fs::path path = fs::current_path() / "file.txt";
+	std::ofstream(path.c_str());
+	auto t = fs::last_write_time(path);
+	auto st = std::chrono::time_point_cast<std::chrono::system_clock::duration>(t - fs::file_time_type::clock::now() + std::chrono::system_clock::now());
+
+	std::time_t cftime = std::chrono::system_clock::to_time_t(st);
+
+
+	std::function<std::string(tm*)> Asctime = [](tm* t)
+	{
+		char timebuf[32];
+		asctime_s(timebuf, _countof(timebuf), t);
+		std::string s(timebuf);
+		return s;
+	};
+
+
+	tm ltiume;
+	localtime_s(&ltiume, &cftime);
+
+	cout << "Write time on Server " << Asctime(&ltiume) << endl;
+
+
+	gmtime_s(&ltiume, &cftime);
+
+	cout << "Write time on Server " << Asctime(&ltiume) << endl;
+
+	fs::last_write_time(path, t + 2h);
+	t = fs::last_write_time(path);
+	st = std::chrono::time_point_cast<std::chrono::system_clock::duration>(t - fs::file_time_type::clock::now() + std::chrono::system_clock::now());
+
+	cftime = std::chrono::system_clock::to_time_t(st);
+	localtime_s(&ltiume, &cftime);
+	cout << "Local time on client " << Asctime(&ltiume) << endl;
+
+
+	fs::space_info root = fs::space("/");
+	cout << ".        Capacity         Free          Acailable" << endl
+		<< "/     " << root.capacity << "   " << root.free << "    " << root.available << endl;
+
+
+}
+
 
 void FilesystemMain()
 {
@@ -80,6 +128,9 @@ void FilesystemMain()
 	FilesystemLibSample();
 
 	FilesystemPermission();
+
+	FilesystemNonMemberSample();
+
 	
 
 }
