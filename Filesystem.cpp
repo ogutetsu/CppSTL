@@ -122,6 +122,46 @@ void FilesystemNonMemberSample()
 }
 
 
+void FilesystemStatusSample()
+{
+
+	std::function<void(const fs::path&)> printStatus = [](const fs::path& path)
+	{
+		cout << path;
+		if (!fs::exists(path)) cout << " does not exist" << endl;
+		else
+		{
+			if (fs::is_block_file(path)) cout << " is a block file" << endl;
+			if (fs::is_character_file(path)) cout << " is a character device" << endl;
+			if (fs::is_directory(path)) cout << " is a directory" << endl;
+			if (fs::is_fifo(path)) cout << " is a named pipe" << endl;
+			if (fs::is_regular_file(path)) cout << " is a regular file" << endl;
+			if (fs::is_socket(path)) cout << " is a socket" << endl;
+			if (fs::is_symlink(path)) cout << " is a symlink" << endl;
+		}
+	};
+
+	fs::create_directory("sandbox");
+	printStatus("sandbox");
+
+	std::ofstream("sandbox/regular.txt");
+	printStatus("sandbox/regular.txt");
+
+	//mkfifo("sandbox/namedPipe", 0644);
+	//printStatus("sandbox/namedPipe");
+
+	//fs::create_symlink("sandbox/regular.txt", "symlink");
+	//printStatus("sandbox/regular.txt");
+
+	printStatus("dummy.txt");
+
+	fs::remove_all("sandbox");
+
+
+}
+
+
+
 void FilesystemMain()
 {
 
@@ -131,8 +171,8 @@ void FilesystemMain()
 
 	FilesystemNonMemberSample();
 
+	FilesystemStatusSample();
 	
-
 }
 
 #else
