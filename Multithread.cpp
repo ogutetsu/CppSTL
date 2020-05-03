@@ -1,6 +1,7 @@
 #include <iostream>
 #include <atomic>
 #include <functional>
+#include <mutex>
 #include <thread>
 #include <string>
 
@@ -105,6 +106,123 @@ void ThreadSample()
 }
 
 
+struct Critical
+{
+	std::mutex mut;
+};
+
+
+struct ConstDouble
+{
+	constexpr ConstDouble(double v) : val(v) {};
+	constexpr double getValue() const { return val; }
+	double val;
+};
+
+
+void ShareValueSample()
+{
+
+	std::mutex mutexCout;
+
+	std::function<void(std::string)> Worker = [&](std::string name)
+	{
+		for (int i = 1; i <= 3; i++)
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(200));
+			mutexCout.lock();
+			cout << name << ": " << "Work " << i << endl;
+			mutexCout.unlock();
+		}
+	};
+
+
+	std::thread abc(Worker, "Abc");
+	std::thread def(Worker, "  def");
+	std::thread hij(Worker, "    hij");
+	std::thread klm(Worker, "      klm");
+
+	abc.join();
+	def.join();
+	hij.join();
+	klm.join();
+
+
+	std::function<void(Critical&, Critical&)> deadLock = [](Critical& a, Critical& b)
+	{
+		a.mut.lock();
+		cout << "first mutex" << endl;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		b.mut.lock();
+		cout << "second mutex" << endl;
+		a.mut.unlock();
+		b.mut.unlock();
+	};
+
+	//Critical c1;
+	//Critical c2;
+
+	//std::thread dt1([&]{ deadLock(c1,c2); });
+	//std::thread dt2([&] { deadLock(c1, c2); });
+
+
+
+
+	std::mutex mutexCoutGuard;
+
+	std::function<void(std::string)> WorkerGuard = [&](std::string name)
+	{
+		for (int i = 1; i <= 3; i++)
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(200));
+			std::lock_guard<std::mutex> lock(mutexCoutGuard);
+			cout << name << ": " << "Work " << i << endl;
+		}
+	};
+
+
+	std::function<void(Critical&, Critical&)> deadLockResolved = [](Critical& a, Critical& b)
+	{
+		std::unique_lock<std::mutex> guard1(a.mut, std::defer_lock);
+		cout << std::this_thread::get_id() << " : first lock" << endl;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		std::unique_lock<std::mutex> guard2(b.mut, std::defer_lock);
+		cout << std::this_thread::get_id() << " : second lock" << endl;
+		cout << std::this_thread::get_id() << " : atomic lock" << endl;
+		std::lock(guard1, guard2);
+	};
+
+	Critical c3;
+	Critical c4;
+
+	std::thread dt3([&] { deadLockResolved(c3, c4); });
+	std::thread dt4([&] { deadLockResolved(c3, c4); });
+
+	dt3.join();
+	dt4.join();
+
+
+	constexpr ConstDouble db(1.456);
+	cout << db.getValue() << endl;
+
+
+
+	std::once_flag onceFlag;
+	std::function<void(void)> do_once = [&]()
+	{
+		std::call_once(onceFlag, [] {cout << "Only once." << endl; });
+	};
+
+	std::thread o1(do_once);
+	std::thread o2(do_once);
+
+	o1.join();
+	o2.join();
+
+}
+
+
+
 
 void MultithreadMain()
 {
@@ -113,6 +231,6 @@ void MultithreadMain()
 
 	ThreadSample();
 
-	
-	
+	ShareValueSample();
+
 }
