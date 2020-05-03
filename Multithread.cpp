@@ -4,6 +4,7 @@
 #include <mutex>
 #include <thread>
 #include <string>
+#include <condition_variable>
 
 
 using std::cout;
@@ -222,6 +223,47 @@ void ShareValueSample()
 }
 
 
+std::mutex mutex_;
+std::condition_variable cond;
+
+void ConditionVariableSample()
+{
+
+	bool dataReady = false;
+
+	std::function<void(void)> doWork = []()
+	{
+		cout << "Shared data." << endl;
+	};
+
+	std::function<void(void)> waitingForWork = [&]()
+	{
+		cout << "Worker: Wainting for work." << endl;
+		std::unique_lock<std::mutex> ulock(mutex_);
+		cond.wait(ulock, [&] {return dataReady; });
+		doWork();
+		cout << "work done." << endl;
+	};
+
+	std::function<void(void)> setDataReady = [&]()
+	{
+		std::lock_guard<std::mutex> lockguard(mutex_);
+		dataReady = true;
+		cout << "Sender: Data is ready." << endl;
+		cond.notify_one();
+	};
+
+	std::thread t1(waitingForWork);
+	std::thread t2(setDataReady);
+
+	t1.join();
+	t2.join();
+
+
+}
+
+
+
 
 
 void MultithreadMain()
@@ -233,4 +275,6 @@ void MultithreadMain()
 
 	ShareValueSample();
 
+	ConditionVariableSample();
+	
 }
