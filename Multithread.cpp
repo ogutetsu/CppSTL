@@ -5,6 +5,7 @@
 #include <thread>
 #include <string>
 #include <condition_variable>
+#include <future>
 
 
 using std::cout;
@@ -263,6 +264,50 @@ void ConditionVariableSample()
 }
 
 
+void TaskSample()
+{
+
+	int res;
+	std::thread t([&] {res = 2000 + 11; });
+	t.join();
+	cout << res << endl;
+
+	auto f = std::async([] {return 2000 + 11; });
+	cout << f.get() << endl;
+
+	auto begin = std::chrono::system_clock::now();
+
+	auto async1 = std::async(std::launch::deferred, [] {return std::chrono::system_clock::now(); });
+	auto async2 = std::async(std::launch::async, [] {return std::chrono::system_clock::now(); });
+	std::this_thread::sleep_for(std::chrono::seconds(1));
+
+	auto a1Start = async1.get() - begin;
+	auto a2Start = async2.get() - begin;
+
+	auto duration1 = std::chrono::duration<double>(a1Start).count();
+	auto duration2 = std::chrono::duration<double>(a2Start).count();
+
+	cout << "defferd: " << duration1 << endl;
+	cout << "async: " << duration2 << endl;
+
+
+	std::function<void(std::promise<int>&&, int, int)> product = [](std::promise<int>&& intPromise, int a, int b)
+	{
+		intPromise.set_value(a*b);
+	};
+
+	int a = 20;
+	int b = 10;
+
+	std::promise<int> prodPromise;
+	std::future<int> prodResult = prodPromise.get_future();
+
+	std::thread prodThread(product, std::move(prodPromise), a, b);
+	prodThread.join();
+	cout << "20*10= " << prodResult.get() << endl;
+
+
+}
 
 
 
@@ -276,5 +321,7 @@ void MultithreadMain()
 	ShareValueSample();
 
 	ConditionVariableSample();
+
+	TaskSample();
 	
 }
