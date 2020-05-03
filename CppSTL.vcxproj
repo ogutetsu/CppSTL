@@ -160,6 +160,7 @@
     <ClCompile Include="Merge.cpp" />
     <ClCompile Include="MinMaxElement.cpp" />
     <ClCompile Include="Modify.cpp" />
+    <ClCompile Include="Multithread.cpp" />
     <ClCompile Include="NonModify.cpp" />
     <ClCompile Include="ForEach.cpp" />
     <ClCompile Include="Function.cpp" />

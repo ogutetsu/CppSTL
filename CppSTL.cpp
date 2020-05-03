@@ -35,6 +35,7 @@ extern void RegexMain();
 extern void IOStreamMain();
 extern void StringStreamMain();
 extern void FilesystemMain();
+extern void MultithreadMain();
 
 int main()
 {
@@ -237,7 +238,13 @@ int main()
 
 	std::cout << " ================ " << std::endl;
 
-	
+
+	std::cout << " ==== Multithreading === " << std::endl;
+
+	MultithreadMain();
+
+	std::cout << " ================ " << std::endl;
+
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー

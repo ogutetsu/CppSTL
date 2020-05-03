@@ -49,6 +49,9 @@
     <Filter Include="ソース ファイル\Filesystem">
       <UniqueIdentifier>{cc443bd9-a94a-4520-acad-0c296fdbb656}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\MultiThreading">
+      <UniqueIdentifier>{cf373b4c-0d32-4c12-a58c-f3f7add56db0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppSTL.cpp">
@@ -146,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="Filesystem.cpp">
       <Filter>ソース ファイル\Filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Multithread.cpp">
+      <Filter>ソース ファイル\MultiThreading</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
